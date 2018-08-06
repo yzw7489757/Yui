@@ -1,5 +1,6 @@
 # vue-yui
-
+# VUE常用组件轮子
+作者：yzw
 > Vue-YUI组件
 
 ## Build Setup
