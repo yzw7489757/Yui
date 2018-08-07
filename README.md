@@ -3,6 +3,7 @@
 作者：yzw
 > Vue-YUI组件
 
+本组件库使用的是border-box;请设置box-sizing: border-box;
 ## Build Setup
 
 ``` bash

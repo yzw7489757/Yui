@@ -18,5 +18,8 @@
   "homepage": "https://github.com/yzw7489757/Yui#readme",
   "dependencies": {
     "vue": "^2.5.17"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.9.7"
   }
 }
