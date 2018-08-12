@@ -9,7 +9,12 @@
 </template>
 
 <script>
+import Icon from './icon'
+
 export default {
+  components: {
+    'g-icon':Icon
+  },
   props: {
     icon:{},
     iconPosition:{
@@ -76,7 +81,7 @@ export default {
     }
   }
   .loading{
-    animation: rotate 1.8s linear infinite;
+    animation: rotate 1s linear infinite;
   }
 }
 </style>
