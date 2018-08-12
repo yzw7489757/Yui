@@ -118,8 +118,7 @@ try {
     vm.$destroy();
   }
 } catch (error) {
-  console.log(err)
+  console.log(error)
 } finally{
-  console.log(123);
   
 }
