@@ -1,13 +1,13 @@
 {
   "name": "vue-yui",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Vue常用组件UI框架",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "parcel build test/* --no-cache --no-minify && karma start --single-run",
     "start": "parcel index.html",
     "dev-test": "parcel watch test/* --no-cache & karma start",
-    "build": "parcel build index.html"
+    "build": "parcel build index.js --no-cache --no-minify"
   },
   "repository": {
     "type": "git",

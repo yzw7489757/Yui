@@ -4,6 +4,8 @@
   </svg>
 </template>
 <script>
+import './iconfont/iconfont.js'
+
 export default {
   props: ['name']
 };
@@ -13,5 +15,6 @@ export default {
   height: 1em;
   width: 1em;
 }
+
 </style>
 
