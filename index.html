@@ -6,14 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <!-- <link rel="stylesheet" href="./index.css"> -->
 </head>
-
+  <style>
+    body{
+      margin:30px;
+    }
+  </style>
 <body>
+
   <div id="app">
+    <div>
+      <g-input value="123" error="123" :input-color="true"></g-input>
+      <g-input value="123" title="123" :input-color="true" :disabled="true"></g-input>
+      <g-input value="123" info="456"  :input-color="true" :readonly="true"></g-input>
+    </div>
     <g-button>按钮</g-button>
 
-    <g-button icon='setting'>按钮</g-button>
+    <g-button icon='setting' :loading="true">按钮</g-button>
 
     <g-button icon-position="right">按钮</g-button>
 
