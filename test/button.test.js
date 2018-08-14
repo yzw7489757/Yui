@@ -27,7 +27,7 @@ describe('Button', () => {
     expect(useElement.getAttribute('xlink:href')).to.equal('#i-settings')
     vm.$destroy()
   })
-  it('可以设置loading.', () => {
+  it('可以设置loadings.', () => {
     const Constructor = Vue.extend(Button)
     const vm = new Constructor({
       propsData: {
@@ -37,7 +37,7 @@ describe('Button', () => {
     }).$mount()
     const useElements = vm.$el.querySelectorAll('use')
     expect(useElements.length).to.equal(1)
-    expect(useElements[0].getAttribute('xlink:href')).to.equal('#i-loading')
+    expect(useElements[0].getAttribute('xlink:href')).to.equal('#i-loadings')
     vm.$destroy()
   })
   it('icon 默认的 order 是 1', () => {
