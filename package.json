@@ -1,6 +1,6 @@
 {
   "name": "vue-yui",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Vue常用组件UI框架",
   "main": "dist/index.js",
   "scripts": {

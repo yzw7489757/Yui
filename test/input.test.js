@@ -97,83 +97,120 @@ describe('input', () => {
   })
 
   describe('event', () => { //describe和it都属于mocha。 而expect断言语句属于chai
-      const Constructor = Vue.extend(Input);
-      let vm 
-      afterEach(function(){
-        vm.$destroy();
-      })
-      ['change','focus','input','blur','click'].forEach(eventName => {
-        vm = new Constructor({}).$mount();
-        let callback = sinon.fake();// 通过sinon创建一个回调函数
-        vm.$on(eventName,callback); //绑定
-
-        let event = new Event(eventName);//手动触发事件
+    const Constructor = Vue.extend(Input);
+    let vm
+    let callback
+    beforeEach(function () {
+      vm = new Constructor({}).$mount();
+      callback = sinon.fake();
+    })
+    it('支持 change/input/focus/blur 事件', () => {
+      ['change', 'focus', 'input', 'blur', 'click']
+      .forEach((eventName) => {
+        vm = new Constructor({}).$mount()
+          const callback = sinon.fake();
+          vm.$on(eventName, callback)
+          //触发input的change 事件
+          let event = new Event(eventName);
+          Object.defineProperty(
+            event, 'target', {
+              value: {value: 'hi'}, enumerable: true
+            }
+          )
         let inputElement = vm.$el.querySelector('input');
-        Object.defineProperty(event,'target',{value:{value:'hi'},enumerable:true})
+        
         inputElement.dispatchEvent(event);
-        expect(callback).to.have.been.calledWith(event);//对回调函数返回的参数做校验
+        expect(callback).to.have.been.calledWith('hi'); //对回调函数返回的参数做校验
       });
-      // it('change',()=>{
-      //   vm = new Constructor({}).$mount();
-      //   let callback = sinon.fake();// 创建一个回调函数
-      //   vm.$on('change',callback); //绑定
+    })
+    
+    afterEach(function () {
+      vm.$destroy();
+    })
 
-      //   let event = new Event('change');//手动触发事件
-      //   let inputElement = vm.$el.querySelector('input');
-      //   inputElement.dispatchEvent(event);
-      //   expect(callback).to.have.been.calledWith(event)
-      // })
-      // it('focus',()=>{
-      //   vm = new Constructor({}).$mount();
-      //   let callback = sinon.fake();
-      //   vm.$on('focus',callback);
+    // it('change', () => {
+    //   vm.$on('change', callback); //绑定
+    //   let event = new Event('change'); //手动触发事件
+    //   let inputElement = vm.$el.querySelector('input');
+    //   Object.defineProperty(event, 'target', {
+    //     value: {
+    //       value: 'hi'
+    //     },
+    //     enumerable: true
+    //   })
+    //   inputElement.dispatchEvent(event);
+    //   expect(callback).to.have.been.calledWith(event)
+    // })
+    // it('focus', () => {
+    //   vm.$on('focus', callback);
+    //   let event = new Event('focus');
+    //   let inputElement = vm.$el.querySelector('input');
+    //   Object.defineProperty(event, 'target', {
+    //     value: {
+    //       value: 'hi'
+    //     },
+    //     enumerable: true
+    //   })
+    //   inputElement.dispatchEvent(event);
+    //   expect(callback).to.have.been.calledWith(event)
+    // })
 
-      //   let event = new Event('focus');
-      //   let inputElement = vm.$el.querySelector('input');
-      //   inputElement.dispatchEvent(event);
-      //   expect(callback).to.have.been.calledWith(event)
-      // })
+    // it('change', () => {
+    //   vm.$on('change', callback);
 
-      // it('change',()=>{
-      //   vm = new Constructor({}).$mount();
-      //   let callback = sinon.fake();
-      //   vm.$on('change',callback);
+    //   let event = new Event('change');
+    //   let inputElement = vm.$el.querySelector('input');
+    //   Object.defineProperty(event, 'target', {
+    //     value: {
+    //       value: 'hi'
+    //     },
+    //     enumerable: true
+    //   })
+    //   inputElement.dispatchEvent(event);
+    //   expect(callback).to.have.been.calledWith(event)
+    // })
+    // it('input', () => {
+    //   vm.$on('input', callback);
 
-      //   let event = new Event('change');
-      //   let inputElement = vm.$el.querySelector('input');
-      //   inputElement.dispatchEvent(event);
-      //   expect(callback).to.have.been.calledWith(event)
-      // })
-      // it('input',()=>{
-      //   vm = new Constructor({}).$mount();
-      //   let callback = sinon.fake();
-      //   vm.$on('input',callback);
+    //   let event = new Event('input');
+    //   let inputElement = vm.$el.querySelector('input');
+    //   Object.defineProperty(event, 'target', {
+    //     value: {
+    //       value: 'hi'
+    //     },
+    //     enumerable: true
+    //   })
+    //   inputElement.dispatchEvent(event);
+    //   expect(callback).to.have.been.calledWith(event)
+    // })
+    // it('blur', () => {
+    //   vm.$on('blur', callback);
 
-      //   let event = new Event('input');
-      //   let inputElement = vm.$el.querySelector('input');
-      //   inputElement.dispatchEvent(event);
-      //   expect(callback).to.have.been.calledWith(event)
-      // })
-      // it('blur',()=>{
-      //   vm = new Constructor({}).$mount();
-      //   let callback = sinon.fake();
-      //   vm.$on('blur',callback);
+    //   let event = new Event('blur');
+    //   let inputElement = vm.$el.querySelector('input');
+    //   Object.defineProperty(event, 'target', {
+    //     value: {
+    //       value: 'hi'
+    //     },
+    //     enumerable: true
+    //   })
+    //   inputElement.dispatchEvent(event);
+    //   expect(callback).to.have.been.calledWith(event)
+    // })
 
-      //   let event = new Event('blur');
-      //   let inputElement = vm.$el.querySelector('input');
-      //   inputElement.dispatchEvent(event);
-      //   expect(callback).to.have.been.calledWith(event)
-      // })
+    // it('click', () => {
+    //   vm.$on('click', callback);
 
-      // it('click',()=>{
-      //   vm = new Constructor({}).$mount();
-      //   let callback = sinon.fake();
-      //   vm.$on('click',callback);
-
-      //   let event = new Event('click');
-      //   let inputElement = vm.$el.querySelector('input');
-      //   inputElement.dispatchEvent(event);
-      //   expect(callback).to.have.been.calledWith(event)
-      // })
+    //   let event = new Event('click');
+    //   let inputElement = vm.$el.querySelector('input');
+    //   Object.defineProperty(event, 'target', {
+    //     value: {
+    //       value: 'hi'
+    //     },
+    //     enumerable: true
+    //   })
+    //   inputElement.dispatchEvent(event);
+    //   expect(callback).to.have.been.calledWith(event)
+    // })
   })
 })

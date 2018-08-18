@@ -4,12 +4,13 @@
         :value="value" 
         :class="{'error_input':error&&inputColor,'info_input':info&&inputColor,'title_input':title&&inputColor}" 
         :readonly="readonly" 
+        :disabled="disabled"
         @change="$emit('change',$event.target.value)"
         @focus="$emit('focus',$event.target.value)"
         @input="$emit('input',$event.target.value)"
         @blur="$emit('blur',$event.target.value)"
         @click="$emit('click',$event.target.value)"
-        :disabled="disabled">
+        >
           <div  v-if="error" class="error_title">
               <icon name="error" class="icon-error"></icon>
               <span class="error_message">{{error}}</span>
