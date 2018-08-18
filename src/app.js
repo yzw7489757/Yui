@@ -11,7 +11,19 @@ Vue.component('g-button-group', ButtonGroup)
 Vue.component('g-input', Input)
 
 new Vue({
-  el: '#app'
+  el: '#app',
+  data(){
+    return{
+      valuea:'hi'
+    }
+  },
+  created(){
+  },
+  methods:{
+    inputChange(e){
+      console.log(this.valuea)
+    }
+  }
 })
 
 

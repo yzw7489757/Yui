@@ -1,17 +1,26 @@
 <template>
     <div class="wrapper">
-        <input type="text" :value="value" :class="{'error_input':error&&inputColor,'info_input':info&&inputColor,'title_input':title&&inputColor}" :readonly="readonly" :disabled="disabled">
+        <input type="text" 
+        :value="value" 
+        :class="{'error_input':error&&inputColor,'info_input':info&&inputColor,'title_input':title&&inputColor}" 
+        :readonly="readonly" 
+        @change="$emit('change',$event.target.value)"
+        @focus="$emit('focus',$event.target.value)"
+        @input="$emit('input',$event.target.value)"
+        @blur="$emit('blur',$event.target.value)"
+        @click="$emit('click',$event.target.value)"
+        :disabled="disabled">
           <div  v-if="error" class="error_title">
               <icon name="error" class="icon-error"></icon>
-              <span>{{error}}</span>
+              <span class="error_message">{{error}}</span>
           </div>
           <div  v-if="info" class="info_title">
               <icon name="info" class="icon-info"></icon>
-              <span>{{info}}</span>
+              <span class="info_message">{{info}}</span>
           </div>
           <div  v-if="title" class="title_title">
               <icon name="tips" class="icon-title"></icon>
-              <span>{{title}}</span>
+              <span class="title_message">{{title}}</span>
           </div>
     </div>
 </template>

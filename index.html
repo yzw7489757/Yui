@@ -16,9 +16,9 @@
 
   <div id="app">
     <div>
-      <g-input value="123" error="123" :input-color="true"></g-input>
-      <g-input value="123" title="123" :input-color="true" :disabled="true"></g-input>
-      <g-input value="123" info="456"  :input-color="true" :readonly="true"></g-input>
+      <g-input v-model="valuea" @input="inputChange"></g-input>
+      <!-- <g-input value="123" title="123" :input-color="true" :disabled="true"></g-input> -->
+      <!-- <g-input value="123" info="456"  :input-color="true" :readonly="true"></g-input> -->
     </div>
     <g-button>按钮</g-button>
 
