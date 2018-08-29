@@ -7,30 +7,53 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
-  <style>
-    body{
-      margin:30px;
-    }
-  </style>
+<style>
+  body {
+    margin: 30px;
+  }
+</style>
+
 <body>
 
   <div id="app">
-    <div>
-      <g-input v-model="valuea"></g-input>
-      <!-- <g-input value="123" title="123" :input-color="true" :disabled="true"></g-input> -->
-      <!-- <g-input value="123" info="456"  :input-color="true" :readonly="true"></g-input> -->
+    <!-- <div>
+      <y-input v-model="valuea"></y-input>
+      <y-input value="123" title="123" :input-color="true" :disabled="true"></y-input>
+      <y-input value="123" info="456"  :input-color="true" :readonly="true"></y-input>
     </div>
-    <g-button>按钮</g-button>
+    <y-button>按钮</y-button>
 
-    <g-button icon='setting' :loading="true">按钮</g-button>
+    <y-button icon='setting' :loading="true">按钮</y-button>
 
-    <g-button icon-position="right">按钮</g-button>
+    <y-button icon-position="right">按钮</y-button>
 
-    <g-button-group>
-      <g-button icon='left'>上一页</g-button>
-      <g-button>更多</g-button>
-      <g-button icon='right' icon-position="right">下一页</g-button>
-    </g-button-group>
+    <y-button-group>
+      <y-button icon='left'>上一页</y-button>
+      <y-button>更多</y-button>
+      <y-button icon='right' icon-position="right">下一页</y-button>
+    </y-button-group> -->
+
+    <y-row gutter="20" align="left">
+      <y-col span="2" :xm="{span:12,offset:12}">12</y-col>
+      <y-col span="3" :md="{span:12,offset:12}">23</y-col>
+      <y-col span="13" :lg="{span:12,offset:12}">4444</y-col>
+    </y-row>
+    <!-- <y-row>
+      <y-col></y-col>
+      <y-col></y-col>
+      <y-col></y-col>
+    </y-row> -->
+    <!-- <div class="sticky">我是粘性定位!</div>
+
+    <div style="padding-bottom:2000px">
+      <p>滚动我</p>
+      <p>来回滚动我</p>
+      <p>滚动我</p>
+      <p>来回滚动我</p>
+      <p>滚动我</p>
+      <p>来回滚动我</p>
+    </div> -->
+
     <div id="test">
     </div>
   </div>
@@ -38,5 +61,15 @@
   <script src="./node_modules/vue/dist/vue.min.js"></script>
   <script src="./src/app.js"></script>
 </body>
+<style>
+  /* div.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 100px;
+    padding: 5px;
+    background-color: #cae8ca;
+    border: 2px solid #4CAF50;
+  } */
+</style>
 
 </html>

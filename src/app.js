@@ -3,12 +3,16 @@ import Button from './button'
 import Input from './input'
 import Icon from './icon'
 import ButtonGroup from './button-group'
+import Row from './row'
+import Col from './col'
 import '../index.css'
 
-Vue.component('g-button', Button)
-Vue.component('g-icon', Icon)
-Vue.component('g-button-group', ButtonGroup)
-Vue.component('g-input', Input)
+Vue.component('y-button', Button)
+Vue.component('y-icon', Icon)
+Vue.component('y-button-group', ButtonGroup)
+Vue.component('y-input', Input)
+Vue.component('y-row',Row)
+Vue.component('y-col',Col)
 
 new Vue({
   el: '#app',
