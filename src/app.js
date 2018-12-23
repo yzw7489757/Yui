@@ -7,6 +7,8 @@ import Row from './row'
 import Col from './col'
 import '../index.css'
 
+Vue.config.productionTip = false
+
 Vue.component('y-button', Button)
 Vue.component('y-icon', Icon)
 Vue.component('y-button-group', ButtonGroup)

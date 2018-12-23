@@ -10,6 +10,13 @@ describe('Col', () => {
   it('存在.', () => {
     expect(Col).to.exist
   })
+  
+  beforeEach(()=>{
+
+  })
+  beforeEach(()=>{
+    
+  })
   it('span', () => {
     const div = document.createElement('div')
     document.body.appendChild(div)
