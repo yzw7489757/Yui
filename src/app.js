@@ -1,20 +1,26 @@
 import Vue from 'vue'
-import Button from './button'
-import Input from './input'
-import Icon from './icon'
-import ButtonGroup from './button-group'
-import Row from './row'
-import Col from './col'
+import Button from './packages/button'
+import Input from './packages/input'
+import Icon from './packages/icon'
+import ButtonGroup from './packages/button-group'
+import Row from './packages/row'
+import Col from './packages/col'
 import '../index.css'
+import VForm from './packages/form'
+import FormItem from './packages/formItem'
+import Message from './packages/message'
+
+Vue.use(Message)
 
 Vue.config.productionTip = false
-
 Vue.component('y-button', Button)
 Vue.component('y-icon', Icon)
 Vue.component('y-button-group', ButtonGroup)
 Vue.component('y-input', Input)
 Vue.component('y-row',Row)
 Vue.component('y-col',Col)
+Vue.component('y-form', VForm)
+Vue.component('y-form-item', FormItem)
 
 new Vue({
   el: '#app',

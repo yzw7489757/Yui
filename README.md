@@ -2,8 +2,8 @@
 [![Build Status](https://travis-ci.org/yzw7489757/Yui.svg?branch=master)](https://travis-ci.org/yzw7489757/Yui)
 
 ## 介绍
-作者：[Seven](https://www.yuanziwen.cn)
-Yui是在工作闲暇之时捣鼓的一个vue组件
+<!-- 作者：[Seven](https://www.yuanziwen.cn) -->
+Yui 一个vue ui组件库，仅做自测研究使用
 
 ## 安装
 安装组件
