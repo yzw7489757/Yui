@@ -3,7 +3,7 @@
 
 ## 介绍
 <!-- 作者：[Seven](https://www.yuanziwen.cn) -->
-Yui 一个vue ui组件库，仅做自测研究使用
+Yui ，Vue component libarary 。 
 
 ## 安装
 安装组件
@@ -34,6 +34,6 @@ Test版本
 ## 联系方式
 
 [个人博客](https://www.yuanziwen.cn)
-[邮箱](mailto:415763469@qq.com)
+[邮箱](mailto:yuanziwen7489757@gmail.com)
 
 ## 贡献者
